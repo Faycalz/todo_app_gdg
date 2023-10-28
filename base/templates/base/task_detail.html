@@ -1,0 +1,47 @@
+{% comment %} <!DOCTYPE html>
+<html>
+<head>
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4">Task Detail</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Task Title</h5>
+                <p class="card-text">Description: Task Description</p>
+                <p class="card-text">Created: Task Created Date</p>
+                <p class="card-text">Completed: Yes</p>
+                <a href="/task" class="btn btn-primary mt-3">Back to Task List</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</html> {% endcomment %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Detail</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="display-4">Task Detail</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Title : {{ task.title }}</h5>
+                <p class="card-text">Description: {{ task.description }}</p>
+                <p class="card-text">Created: {{ task.created }}</p>
+                <p class="card-text">Completed:{% if task.complete %} Yes {% else %} No {% endif %}</p>
+                <a href="{% url 'task' %}" class="btn btn-primary mt-3">Back to Task List</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</html>
